@@ -1,0 +1,44 @@
+﻿@page "/calculator"
+
+<PageTitle>Calculator</PageTitle>
+
+<h1>Calculator</h1>
+
+<div class="flex">
+<input type="number" @bind-value="@n1" /><br />
+<input type="number" @bind-value="@n2" />
+</div>
+
+<div class="flex">
+<button class="btn btn-primary" @onclick="Tambah">+</button>
+<button class="btn btn-primary" @onclick="Kurang">-</button>
+<button class="btn btn-primary" @onclick="Kali">x</button>
+<button class="btn btn-primary" @onclick="Bagi">:</button>
+</div>
+
+<p>Hasil: @hasil</p>
+
+
+@code {
+    private int n1;
+    private int n2;
+
+    private int hasil;
+
+    private void Tambah()
+    {
+        hasil = n1 + n2;    
+    }
+    private void Kurang()
+    {
+        hasil = n1 - n2;
+    }
+    private void Kali()
+    {
+        hasil = n1 * n2;
+    }
+    private void Bagi()
+    {
+        hasil = n1 / n2;
+    }
+}

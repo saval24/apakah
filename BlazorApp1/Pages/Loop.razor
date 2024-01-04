@@ -1,0 +1,34 @@
+﻿@page "/loop"
+
+<PageTitle>Loop</PageTitle>
+
+<h1>Loop</h1>
+
+<div class="flex">
+    <input type="number" @bind-value="@arrays[0]" /><br />
+    <input type="number" @bind-value="@arrays[1]" /><br />
+    <input type="number" @bind-value="@arrays[2]" /><br />
+    <input type="number" @bind-value="@arrays[3]" />
+</div>
+
+<div class="flex">
+    <button class="btn btn-primary" @onclick="Tambah">foreach</button>
+</div>
+
+<p>Hasil: @hasil</p>
+
+
+@code {
+    string[] arrays = {"", "", "", ""};
+    
+
+    string hasil = "";
+
+    private void Tambah()
+    {
+        foreach (string array in arrays)
+        {
+            hasil += " " + array;
+        }
+    }
+}

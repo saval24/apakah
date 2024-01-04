@@ -1,0 +1,29 @@
+﻿@page "/nama"
+
+<PageTitle>Nama</PageTitle>
+
+<h1>Nama</h1>
+
+<div class="flex">
+<input type="text" @bind-value="@n1" /><br />
+<input type="text" @bind-value="@n2" />
+</div>
+
+<div class="flex">
+<button class="btn btn-primary" @onclick="Enter">Enter</button>
+</div>
+
+<p>Hasil: @hasil</p>
+
+
+@code {
+    private string n1 = "";
+    private string n2 = "";
+
+    private string hasil = "";
+
+    private void Enter()
+    {
+        hasil = n1.ToUpper() + " " + n2.ToLower();    
+    }
+}
